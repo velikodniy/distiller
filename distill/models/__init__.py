@@ -18,8 +18,6 @@
 
 import torch
 import torchvision.models as torch_models
-import models.cifar10 as cifar10_models
-import models.imagenet as imagenet_extra_models
 
 import logging
 msglogger = logging.getLogger()

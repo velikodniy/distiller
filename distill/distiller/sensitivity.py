@@ -32,7 +32,7 @@ from copy import deepcopy
 from collections import OrderedDict
 import logging
 import csv
-import distiller
+from distill import distiller
 from .scheduler import CompressionScheduler
 
 msglogger = logging.getLogger()

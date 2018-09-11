@@ -20,8 +20,8 @@ import sys
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
-import models
+from distill import models, distiller
+
 
 def test_sparsity():
     zeros = torch.zeros(2,3,5,6)

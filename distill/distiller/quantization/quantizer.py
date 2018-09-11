@@ -20,7 +20,7 @@ import copy
 import logging
 import torch
 import torch.nn as nn
-import distiller
+from distill import distiller
 
 msglogger = logging.getLogger()
 

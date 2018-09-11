@@ -27,7 +27,7 @@ import logging
 import torch
 from torch.autograd import Variable
 import torch.optim
-import distiller
+from distill import distiller
 from .data_loggers import PythonLogger, CsvLogger
 
 msglogger = logging.getLogger()
@@ -91,12 +91,12 @@ def weights_sparsity_summary(model, return_total_sparsity=False, param_dims=[2, 
                 distiller.size_to_str(param.size()),
                 torch.numel(param),
                 int(_density * param.numel()),
-                distiller.sparsity_cols(param)*100,
-                distiller.sparsity_rows(param)*100,
-                distiller.sparsity_ch(param)*100,
-                distiller.sparsity_2D(param)*100,
-                distiller.sparsity_3D(param)*100,
-                (1-_density)*100,
+                distiller.sparsity_cols(param) * 100,
+                distiller.sparsity_rows(param) * 100,
+                distiller.sparsity_ch(param) * 100,
+                distiller.sparsity_2D(param) * 100,
+                distiller.sparsity_3D(param) * 100,
+                (1-_density) * 100,
                 param.std().item(),
                 param.mean().item(),
                 param.abs().mean().item()

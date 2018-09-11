@@ -23,9 +23,8 @@ script_dir = os.path.dirname(__file__)
 module_path = os.path.abspath(os.path.join(script_dir, '..', '..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
-import apputils
-from distiller.data_loggers import TensorBoardLogger, PythonLogger
+from distill import apputils, distiller
+from distill.distiller import TensorBoardLogger, PythonLogger
 
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 RNN/LSTM Language Model')
@@ -315,7 +314,7 @@ compression_scheduler = None
 if args.compress:
     # Create a CompressionScheduler and configure it from a YAML schedule file
     source = args.compress
-    compression_scheduler = distiller.config.file_config(model, None, args.compress)
+    compression_scheduler = distill.distiller.config.file_config(model, None, args.compress)
 
 optimizer = torch.optim.SGD(model.parameters(), args.lr,
                             momentum=args.momentum,

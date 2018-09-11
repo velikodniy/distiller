@@ -16,7 +16,7 @@
 
 import logging
 import torch
-import distiller
+from distill import distiller
 from .pruner import _ParameterPruner
 msglogger = logging.getLogger()
 

@@ -21,10 +21,9 @@ import sys
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
 import pytest
 import common  # common test code
-import apputils
+from distill import apputils, distiller
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO)

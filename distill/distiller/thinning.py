@@ -30,10 +30,10 @@ import logging
 from collections import namedtuple
 import torch
 from .policy import ScheduledTrainingPolicy
-import distiller
-from distiller import normalize_module_name, denormalize_module_name
-from apputils import SummaryGraph
-from models import create_model
+from distill import distiller
+from distill.distiller import normalize_module_name, denormalize_module_name
+from distill.apputils import SummaryGraph
+from distill.models import create_model
 msglogger = logging.getLogger()
 
 ThinningRecipe = namedtuple('ThinningRecipe', ['modules', 'parameters'])

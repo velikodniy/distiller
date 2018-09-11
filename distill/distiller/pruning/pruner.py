@@ -15,7 +15,8 @@
 #
 
 import torch
-import distiller
+from distill import distiller
+
 
 class _ParameterPruner(object):
     """Base class for all pruners.

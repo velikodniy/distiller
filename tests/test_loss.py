@@ -24,8 +24,8 @@ import pytest
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-from distiller import ScheduledTrainingPolicy, CompressionScheduler
-from distiller.policy import PolicyLoss, LossComponent
+from distill.distiller import ScheduledTrainingPolicy, CompressionScheduler
+from distill.distiller.policy import PolicyLoss, LossComponent
 
 
 class DummyPolicy(ScheduledTrainingPolicy):

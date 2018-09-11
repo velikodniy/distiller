@@ -70,14 +70,14 @@ import torchnet.meter as tnt
 script_dir = os.path.dirname(__file__)
 module_path = os.path.abspath(os.path.join(script_dir, '..', '..'))
 try:
-    import distiller
+    pass
 except ImportError:
     sys.path.append(module_path)
-    import distiller
-import apputils
-from distiller.data_loggers import TensorBoardLogger, PythonLogger, ActivationSparsityCollector
-import distiller.quantization as quantization
-from models import ALL_MODEL_NAMES, create_model
+    import distill.distiller
+from distill import apputils, distiller
+from distill.distiller import TensorBoardLogger, PythonLogger, ActivationSparsityCollector
+import distill.distiller.quantization as quantization
+from distill.models import ALL_MODEL_NAMES, create_model
 
 
 # Logger handle
@@ -151,7 +151,7 @@ parser.add_argument('--earlyexit_lossweights', type=float, nargs='*', dest='earl
 parser.add_argument('--earlyexit_thresholds', type=float, nargs='*', dest='earlyexit_thresholds', default=None,
                     help='List of EarlyExit thresholds (e.g. --earlyexit 1.2 0.9)')
 
-distiller.knowledge_distillation.add_distillation_args(parser, ALL_MODEL_NAMES, True)
+distill.distiller.knowledge_distillation.add_distillation_args(parser, ALL_MODEL_NAMES, True)
 
 def check_pytorch_version():
     if torch.__version__ < '0.4.0':

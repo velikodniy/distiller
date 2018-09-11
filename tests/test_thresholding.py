@@ -5,7 +5,7 @@ import pytest
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
+from distill import distiller
 
 
 def get_test_tensor():

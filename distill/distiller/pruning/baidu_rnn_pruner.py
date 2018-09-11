@@ -16,9 +16,10 @@
 
 from .pruner import _ParameterPruner
 from .level_pruner import SparsityLevelParameterPruner
-from distiller.utils import *
+from distill.distiller.utils import *
 
-import distiller
+from distill import distiller
+
 
 class BaiduRNNPruner(_ParameterPruner):
     """An element-wise pruner for RNN networks.

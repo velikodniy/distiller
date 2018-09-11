@@ -15,7 +15,7 @@
 #
 
 from .pruner import _ParameterPruner
-import distiller
+from distill import distiller
 import torch
 
 class SensitivityPruner(_ParameterPruner):

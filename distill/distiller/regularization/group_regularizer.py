@@ -40,7 +40,8 @@ group and individual feature levels"
 """
 
 from .regularizer import _Regularizer, EPSILON
-import distiller
+from distill import distiller
+
 
 class GroupLassoRegularizer(distiller.GroupThresholdMixin, _Regularizer):
     def __init__(self, name, model, reg_regims, threshold_criteria=None):

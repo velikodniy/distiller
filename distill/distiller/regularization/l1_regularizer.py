@@ -19,7 +19,7 @@
 import torch
 import math
 import numpy as np
-import distiller
+from distill import distiller
 from .regularizer import _Regularizer, EPSILON
 
 class L1Regularizer(_Regularizer):

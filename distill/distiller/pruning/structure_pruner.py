@@ -16,7 +16,8 @@
 
 import logging
 from .pruner import _ParameterPruner
-import distiller
+from distill import distiller
+
 msglogger = logging.getLogger()
 
 class StructureParameterPruner(distiller.GroupThresholdMixin, _ParameterPruner):

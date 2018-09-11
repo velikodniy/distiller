@@ -15,7 +15,7 @@
 #
 
 import torch
-from distiller.utils import sparsity
+from distill.distiller.utils import sparsity
 from torchnet.meter import AverageValueMeter
 import logging
 msglogger = logging.getLogger()

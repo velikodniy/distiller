@@ -30,7 +30,7 @@ import torch.jit as jit
 import pandas as pd
 from tabulate import tabulate
 import pydot
-import distiller
+from distill import distiller
 import logging
 msglogger = logging.getLogger(__name__)
 

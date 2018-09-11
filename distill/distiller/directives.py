@@ -27,7 +27,7 @@ import logging
 msglogger = logging.getLogger()
 
 from torchnet.meter import AverageValueMeter
-from distiller.utils import sparsity, density
+from distill.distiller.utils import sparsity, density
 
 
 class FreezeTraining(object):

@@ -19,12 +19,12 @@ import torch
 import os
 import sys
 try:
-    import distiller
+    from distill import distiller
 except ImportError:
     module_path = os.path.abspath(os.path.join('..'))
     if module_path not in sys.path:
         sys.path.append(module_path)
-    import distiller
+    import distill.distiller
 import common  # common test code
 
 # Logging configuration

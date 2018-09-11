@@ -20,8 +20,8 @@ import torch
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
-from models import create_model
+from distill import distiller
+from distill.models import create_model
 
 
 def setup_test(arch, dataset, parallel):

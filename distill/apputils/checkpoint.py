@@ -25,7 +25,8 @@ import shutil
 from errno import ENOENT
 import logging
 import torch
-import distiller
+from distill import distiller
+
 msglogger = logging.getLogger()
 
 
@@ -107,8 +108,8 @@ def load_checkpoint(model, chkpt_file, optimizer=None):
             # Cache the recipes in case we need them later
             model.thinning_recipes = checkpoint['thinning_recipes']
             distiller.execute_thinning_recipes_list(model,
-                                              compression_scheduler.zeros_mask_dict,
-                                              model.thinning_recipes)
+                                                    compression_scheduler.zeros_mask_dict,
+                                                    model.thinning_recipes)
 
         if 'quantizer_metadata' in checkpoint:
             msglogger.info('Loaded quantizer metadata from the checkpoint')

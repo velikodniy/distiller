@@ -38,12 +38,12 @@ import yaml
 import json
 import inspect
 from torch.optim.lr_scheduler import *
-import distiller
-from distiller.thinning import *
-from distiller.pruning import *
-from distiller.regularization import L1Regularizer, GroupLassoRegularizer
-from distiller.learning_rate import *
-from distiller.quantization import *
+from distill import distiller
+from distill.distiller import *
+from distill.distiller.pruning import *
+from distill.distiller.regularization import L1Regularizer, GroupLassoRegularizer
+from distill.distiller.learning_rate import *
+from distill.distiller.quantization import *
 
 msglogger = logging.getLogger()
 app_cfg_logger = logging.getLogger("app_cfg")

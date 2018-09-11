@@ -16,7 +16,7 @@
 
 from .pruner import _ParameterPruner
 from .level_pruner import SparsityLevelParameterPruner
-from distiller.utils import *
+from distill.distiller.utils import *
 
 class AutomatedGradualPruner(_ParameterPruner):
     """Prune to an exact pruning level specification.

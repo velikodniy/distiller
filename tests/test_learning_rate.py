@@ -23,7 +23,7 @@ if module_path not in sys.path:
 
 import torch
 from torch.optim import Optimizer
-from distiller.learning_rate import MultiStepMultiGammaLR
+from distill.distiller.learning_rate import MultiStepMultiGammaLR
 
 
 def test_multi_step_multi_gamma_lr():

@@ -25,10 +25,10 @@ import pytest
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-from distiller.quantization import Quantizer
-from distiller.quantization.quantizer import QBits
-from distiller.quantization.quantizer import FP_BKP_PREFIX
-from distiller import has_children
+from distill.distiller.quantization import Quantizer
+from distill.distiller.quantization import QBits
+from distill.distiller.quantization import FP_BKP_PREFIX
+from distill.distiller import has_children
 
 
 #############################

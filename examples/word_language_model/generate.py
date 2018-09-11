@@ -24,7 +24,7 @@ script_dir = os.path.dirname(__file__)
 module_path = os.path.abspath(os.path.join(script_dir, '..', '..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
+from distill import distiller
 
 parser = argparse.ArgumentParser(description='PyTorch Wikitext-2 Language Model')
 

@@ -20,15 +20,15 @@ import torch
 import os
 import sys
 try:
-    import distiller
+    from distill import distiller
 except ImportError:
     module_path = os.path.abspath(os.path.join('..'))
     sys.path.append(module_path)
-    import distiller
+    import distill.distiller
 import common
 import pytest
-from models import create_model
-from apputils import save_checkpoint, load_checkpoint
+from distill.models import create_model
+from distill.apputils import save_checkpoint, load_checkpoint
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO)
@@ -383,7 +383,7 @@ def test_threshold_mask():
     mask = distiller.threshold_mask(a, threshold=0.3)
     assert np.sum(distiller.to_np(mask)) == (distiller.volume(a) - 1)
     assert mask[1, 4, 17, 31] == 0
-    assert common.almost_equal(distiller.sparsity(mask), 1/distiller.volume(a))
+    assert common.almost_equal(distiller.sparsity(mask), 1 / distiller.volume(a))
 
 
 def test_magnitude_pruning():
@@ -405,18 +405,18 @@ def test_magnitude_pruning():
     assert distiller.sparsity(a) == 0
     # Create a mask for parameter 'a'
     pruner.set_param_mask(a, 'a', zeros_mask_dict, None)
-    assert common.almost_equal(distiller.sparsity(zeros_mask_dict['a'].mask), 1/distiller.volume(a))
+    assert common.almost_equal(distiller.sparsity(zeros_mask_dict['a'].mask), 1 / distiller.volume(a))
 
     # Let's now use the masker to prune a parameter
     masker = zeros_mask_dict['a']
     masker.apply_mask(a)
-    assert common.almost_equal(distiller.sparsity(a), 1/distiller.volume(a))
+    assert common.almost_equal(distiller.sparsity(a), 1 / distiller.volume(a))
     # We can use the masker on other tensors, if we want (and if they have the correct shape).
     # Remember that the mask was created already, so we're not thresholding - we are pruning
     b = torch.ones(3, 64, 32, 32)
     b[:] = 0.3
     masker.apply_mask(b)
-    assert common.almost_equal(distiller.sparsity(b), 1/distiller.volume(a))
+    assert common.almost_equal(distiller.sparsity(b), 1 / distiller.volume(a))
 
 
 if __name__ == '__main__':

@@ -27,8 +27,8 @@ Note that not all loggers implement all logging methods.
 import torch
 import numpy as np
 import tabulate
-import distiller
-from distiller.utils import density, sparsity, sparsity_2D, size_to_str, to_np
+from distill import distiller
+from distill.distiller.utils import density, sparsity, sparsity_2D, size_to_str, to_np
 # TensorBoard logger
 from .tbbackend import TBBackend
 # Visdom logger

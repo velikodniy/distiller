@@ -22,11 +22,10 @@ import torch
 import json
 import gym
 from gym import spaces
-import distiller
-from apputils import SummaryGraph
+from distill.apputils import SummaryGraph
 from collections import OrderedDict, namedtuple
 from types import SimpleNamespace
-from distiller import normalize_module_name
+from distill.distiller import normalize_module_name
 
 from rl_coach.base_parameters import TaskParameters
 
@@ -559,8 +558,8 @@ def random_adc(model, dataset, arch, data_loader, validate_fn, save_checkpoint_f
 import os
 import pandas as pd
 from tabulate import tabulate
-import apputils
-from models import create_model
+from distill import apputils, distiller
+from distill.models import create_model
 
 
 def summarize_experiment(experiment_dir, dataset, arch, validate_fn):

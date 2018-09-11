@@ -16,7 +16,8 @@
 
 import torch
 from .pruner import _ParameterPruner
-import distiller
+from distill import distiller
+
 
 class SparsityLevelParameterPruner(_ParameterPruner):
     """Prune to an exact pruning level specification.

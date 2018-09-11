@@ -22,10 +22,10 @@ import pytest
 module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
-import distiller
-from models import ALL_MODEL_NAMES, create_model
-from apputils import *
-from distiller import normalize_module_name, denormalize_module_name
+from distill import distiller
+from distill.models import ALL_MODEL_NAMES, create_model
+from distill.apputils import *
+from distill.distiller import normalize_module_name, denormalize_module_name
 
 # Logging configuration
 logging.basicConfig(level=logging.DEBUG)
